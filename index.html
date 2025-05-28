@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Shanghai Case Study</title>
     <style>
         body {
-            font-family: Helvatica, sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
@@ -20,20 +20,54 @@
 
         nav {
             background-color: #444;
-            overflow: auto;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav li {
+            position: relative;
+        }
+
+        nav > ul > li {
+            margin: 0;
         }
 
         nav a {
-            float: left;
             display: block;
             color: white;
-            text-align: center;
             padding: 1rem;
             text-decoration: none;
         }
 
         nav a:hover {
             background-color: #555;
+        }
+
+        /* Dropdown Styles */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 180px;
+            z-index: 1;
+            top: 100%;
+            left: 0;
+        }
+
+        .dropdown-content a {
+            padding: 1rem;
+            display: block;
+        }
+
+        nav li:hover .dropdown-content {
+            display: block;
         }
 
         section {
@@ -55,20 +89,42 @@
 </header>
 
 <nav>
-    <a href="#overview">Overview</a>
-    <a href="#history">History</a>
-    <a href="#geography">Geography</a>
-    <a href="#economy">Economy</a>
-    <a href="#urban">Urban Development</a>
-    <a href="#infrastructure">Infrastructure</a>
-    <a href="#culture">Culture</a>
-    <a href="#environment">Environment</a>
-    <a href="#governance">Governance</a>
-    <a href="#global">Global Role</a>
-    <a href="#challenges">Challenges</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#references">References</a>
-    <a href="#contact">Contact</a>
+    <ul>
+        <li><a href="#overview">Overview</a></li>
+        <li>
+            <a href="#history">City Profile ▾</a>
+            <div class="dropdown-content">
+                <a href="#history">History</a>
+                <a href="#geography">Geography</a>
+                <a href="#economy">Economy</a>
+                <a href="#urban">Urban Development</a>
+            </div>
+        </li>
+        <li>
+            <a href="#infrastructure">Systems ▾</a>
+            <div class="dropdown-content">
+                <a href="#infrastructure">Infrastructure</a>
+                <a href="#environment">Environment</a>
+                <a href="#governance">Governance</a>
+            </div>
+        </li>
+        <li>
+            <a href="#culture">Global & Society ▾</a>
+            <div class="dropdown-content">
+                <a href="#culture">Culture</a>
+                <a href="#global">Global Role</a>
+                <a href="#challenges">Challenges</a>
+            </div>
+        </li>
+        <li>
+            <a href="#gallery">Extras ▾</a>
+            <div class="dropdown-content">
+                <a href="#gallery">Gallery</a>
+                <a href="#references">References</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </li>
+    </ul>
 </nav>
 
 <main>
